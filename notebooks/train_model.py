@@ -74,7 +74,7 @@ print(cm)
 # Rapport de classification
 print("\nRapport de classification :")
 print(classification_report(y_test, y_pred))
-
+"""
 # Visualiser avec seaborn
 plt.figure(figsize=(8, 6))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
@@ -87,7 +87,7 @@ plt.tight_layout()
 plt.savefig('figures/confusion_matrix.png', dpi=150)
 plt.show()
 print("Figure sauvegardee dans figures/confusion_matrix.png")
-
+"""
 import joblib
 import os
 # Creer le dossier models/ s'il n'existe pas
