@@ -151,3 +151,23 @@ print(f"\nProbabilites par classe :")
 for classe, proba in zip(model_loaded.classes_, probas):
    bar = '#' * int(proba * 30)
    print(f" {classe:8s} : {proba:.1%} {bar}")
+
+#Exercice 1
+importances = model.feature_importances_
+
+for name, imp in sorted(zip(feature_cols, importances), key=lambda x: x[1], reverse=True):
+    print(f"{name:20s} : {imp:.3f}")
+
+#Exercice 2
+import numpy as np
+
+patients = np.array([
+    [20, 1, 37.0, 120, 0, 0, 0, 0],  # jeune sans symptômes
+    [35, 0, 39.5, 110, 0, 1, 1, 1],  # adulte avec forte fièvre
+    [70, 1, 38.0, 130, 1, 1, 0, 2],  # personne âgée avec toux
+])
+
+predictions = model_loaded.predict(patients)
+
+for i, pred in enumerate(predictions):
+    print(f"Patient {i+1} : {pred}")
